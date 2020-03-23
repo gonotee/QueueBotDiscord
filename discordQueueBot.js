@@ -95,7 +95,7 @@ client.on('message', message => {
             if (queue[0] != null) {
 
                 //Sends a message to the mainLobby channel alerting the next in line that an SI is ready for them
-                let mainLobby = message.client.channels.cache.find(ch => ch.name === mainLobby);
+                let mainChannel = message.client.channels.cache.find(ch => ch.name === mainLobby);
                 let si = '';
                 if (message.member.nickname != null) {
                     si = message.member.nickname;
@@ -106,7 +106,7 @@ client.on('message', message => {
                 //Treats the student as a guild member if they have a nickname
                 if (message.guild.members.cache.find(member => member.user.username === queue[0]).nickname != null) {
                     student = message.guild.members.cache.find(member => member.user.username === queue[0]);
-                    mainLobby.send('<@' + student.user.id + '>, ' + si + ' is ready to help you now.');
+                    mainChannel.send('<@' + student.user.id + '>, ' + si + ' is ready to help you now.');
                     //Replies to SI with the student they will be helping
                     message.reply('The next in line is ' + student.nickname);
                 //Otherwise treats them as a user to ensure code runs
