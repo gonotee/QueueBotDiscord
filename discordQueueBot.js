@@ -36,6 +36,7 @@ client.on('message', message => {
         //Adds the SI only commands to the help output
         if (message.member.roles.cache.some(role => role.name === priveledgedRole)) {
             msg += '!take - Alerts the next in line student that you are ready to help them (uses your nickname)\n';
+            msg += '!empty - Completely empties the queue';
         }
 
         //Adds the commands everyone can use to the help output
@@ -152,6 +153,20 @@ client.on('message', message => {
             queue.splice(queue.indexOf(message.author.username), 1);
         } else {
             message.reply('You are not currently in the queue.');
+        }
+    }
+    /**
+     * !empty
+     * Permissions: Priveledged
+     * Precondition: Queue exists and has elements in it
+     * Postcondition: Queue is emptied
+     */
+    if (message.content === '!empty') {
+        if (message.member.roles.cache.some(role => role.name === priveledgedRole)) {
+            message.reply('The queue has been emptied');
+            queue = new Array();
+        } else {
+            message.reply('You do not have permission to use this command');
         }
     }
 });
