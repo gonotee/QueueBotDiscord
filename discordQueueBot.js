@@ -112,7 +112,7 @@ client.on('message', message => {
                 //Otherwise treats them as a user to ensure code runs
                 } else {
                     student = client.users.cache.find(user => user.username === queue[0]);
-                    mainLobby.send('<@' + student.id + '>, ' + si + ' is ready to help you now.');
+                    mainChannel.send('<@' + student.id + '>, ' + si + ' is ready to help you now.');
                     //Replies to SI with the student they will be helping
                     message.reply('The next in line is ' + student.username);
                 }
