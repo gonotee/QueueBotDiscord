@@ -70,16 +70,21 @@ client.on('message', message => {
      *                executed in that displays the Queue as a list.
      */
     if (message.content === '!view') {
-        let currentQueue = '';
-        queue.forEach(function(item, index, array) {
-            let searchKey = message.guild.members.cache.find(member => member.user.username === queue[index]);
-            if (searchKey.nickname != null){
-                currentQueue += searchKey.nickname + ', ';
-            } else {
-                currentQueue += item + ', ';
-            }
-        })
-        message.reply('QUEUE: ' + currentQueue)
+        if (queue.length < 1) {
+            message.reply('The queue is empty');
+        } else {
+            let currentQueue = '';
+            queue.forEach(function(item, index, array) {
+                let searchKey = message.guild.members.cache.find(member => member.user.username === queue[index]);
+                if (searchKey.nickname != null){
+                    currentQueue += searchKey.nickname + ', ';
+                } else {
+                    currentQueue += item + ', ';
+                }
+            })
+            message.reply('QUEUE: ' + currentQueue)
+        }
+        
     }
     /**
      * !take Command
