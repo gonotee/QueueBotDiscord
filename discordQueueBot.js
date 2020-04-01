@@ -36,7 +36,7 @@ client.on('message', message => {
         //Adds the SI only commands to the help output
         if (message.member.roles.cache.some(role => role.name === priveledgedRole)) {
             msg += '!take - Alerts the next in line student that you are ready to help them (uses your nickname)\n';
-            msg += '!empty - Completely empties the queue';
+            msg += '!empty - Completely empties the queue\n';
         }
 
         //Adds the commands everyone can use to the help output
