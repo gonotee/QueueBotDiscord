@@ -2,7 +2,7 @@
 A simple discord bot designed to help support online computer science tutoring during the 2020 Covid-19 pandemic.
 
 ### Things to know
-1. Four things must be changed in the code for the bot to function with your own server
+1. Four things must be changed in the code for the bot to function with your own server \n
   a. const priveledgedRole must be changed to the value cooresponding to your servers priveledged role
   b. const mainLobby must be changed to the value cooresponding to your servers main text channel
   c. const errorLog must be changed to the value cooresponding to the servers channel you wish the bot to send error messages to (It is recommended that you do not send error messages to a channel visable to all users.
