@@ -23,7 +23,7 @@ var checkoffqueue = new Array();
 var fs = require('fs');
 var csvWriter = require('csv-write-stream');
 var writer = csvWriter({ headers: ["Name", "Date"]});
-writer.pipe(fs.createWriteStream('studentSignIn.csv'));
+writer.pipe(fs.createWriteStream('studentSignIn.csv', {flag: 'a'}));
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
