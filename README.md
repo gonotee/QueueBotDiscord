@@ -9,4 +9,5 @@ A simple discord bot designed to help support online computer science tutoring d
   d. The last line is your client token. If you are hosting the bot yourself you need to replace the text where it says with your unique client token. More information on how to set up and host the bot yourself can be found in the setupInstructions.docx file.   
 2. This bot uses node.js and discord.js. Instructions to install these are included in the setupInstructions.docx file.  
 3. Hosting the bot is done on your own computer using node.js and Windows command prompt. Because of this the computer hosting the bot must be on and connected to the internet for the bot to work.  
+4. The Bot is set up to create a running list of users that join the queue. This is stored in a csv saved to the same directory the bot is stored in. The CSV will try to write the users nickname first but default to their username if no nickname is set.
   
